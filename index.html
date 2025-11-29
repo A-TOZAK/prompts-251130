@@ -18,41 +18,80 @@
             <p class="subtitle">学校現場で使えるAIプロンプトを共有・活用しよう</p>
         </header>
 
+        <section class="search-section card">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="キーワードで検索（例：運動会、学級通信...）">
+            </div>
+            <div class="filter-container">
+                <select id="schoolFilter">
+                    <option value="">すべての校種</option>
+                    <option value="小学校">小学校</option>
+                    <option value="中学校">中学校</option>
+                    <option value="高校">高校</option>
+                    <option value="その他">その他</option>
+                </select>
+                <select id="subjectFilter">
+                    <option value="">すべての教科・カテゴリ</option>
+                    <option value="国語">国語</option>
+                    <option value="算数・数学">算数・数学</option>
+                    <option value="社会">社会</option>
+                    <option value="理科">理科</option>
+                    <option value="英語">英語</option>
+                    <option value="音楽">音楽</option>
+                    <option value="図画工作・美術">図工・美術</option>
+                    <option value="体育・保健体育">体育</option>
+                    <option value="技術・家庭">技術・家庭</option>
+                    <option value="道徳">道徳</option>
+                    <option value="総合">総合</option>
+                    <option value="特別活動">特別活動</option>
+                    <option value="外国語">外国語</option>
+                    <option value="校務">校務</option>
+                    <option value="探究">探究</option>
+                    <option value="生活">生活</option>
+                </select>
+            </div>
+        </section>
+
         <section class="card">
-            <h2>プロンプトを投稿する</h2>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
-                ※GitHub Pages版のため、投稿はあなたのブラウザにのみ保存されます。
-            </p>
-            <form id="promptForm">
-                <div class="form-group">
-                    <label for="title">タイトル</label>
-                    <input type="text" id="title" name="title" placeholder="例：学級通信の挨拶文作成" required>
-                </div>
+            <details>
+                <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">プロンプトを投稿する（クリックで開く）
+                </summary>
+                <div style="margin-top: 1rem;">
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        ※GitHub Pages版のため、投稿はあなたのブラウザにのみ保存されます。
+                    </p>
+                    <form id="promptForm">
+                        <div class="form-group">
+                            <label for="title">タイトル</label>
+                            <input type="text" id="title" name="title" placeholder="例：学級通信の挨拶文作成" required>
+                        </div>
 
-                <div class="form-group">
-                    <label for="school_type">校種</label>
-                    <select id="school_type" name="school_type" required>
-                        <option value="" disabled selected>選択してください</option>
-                        <option value="小学校">小学校</option>
-                        <option value="中学校">中学校</option>
-                        <option value="高校">高校</option>
-                        <option value="その他">その他</option>
-                    </select>
-                </div>
+                        <div class="form-group">
+                            <label for="school_type">校種</label>
+                            <select id="school_type" name="school_type" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="小学校">小学校</option>
+                                <option value="中学校">中学校</option>
+                                <option value="高校">高校</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
 
-                <div class="form-group">
-                    <label for="subject">教科・カテゴリ</label>
-                    <input type="text" id="subject" name="subject" placeholder="例：国語、生徒指導、事務" required>
-                </div>
+                        <div class="form-group">
+                            <label for="subject">教科・カテゴリ</label>
+                            <input type="text" id="subject" name="subject" placeholder="例：国語、生徒指導、事務" required>
+                        </div>
 
-                <div class="form-group">
-                    <label for="content">プロンプト内容</label>
-                    <textarea id="content" name="content" rows="6" placeholder="AIに入力するプロンプトをここに書いてください..."
-                        required></textarea>
-                </div>
+                        <div class="form-group">
+                            <label for="content">プロンプト内容</label>
+                            <textarea id="content" name="content" rows="6" placeholder="AIに入力するプロンプトをここに書いてください..."
+                                required></textarea>
+                        </div>
 
-                <button type="submit" class="btn-primary">投稿する</button>
-            </form>
+                        <button type="submit" class="btn-primary">投稿する</button>
+                    </form>
+                </div>
+            </details>
         </section>
 
         <section id="promptList" class="prompt-list">
