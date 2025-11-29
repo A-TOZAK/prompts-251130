@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>先生のためのプロンプト集 | Teacher's Prompts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>先生のためのプロンプト集</h1>
+            <p class="subtitle">学校現場で使えるAIプロンプトを共有・活用しよう</p>
+        </header>
+
+        <section class="card">
+            <h2>プロンプトを投稿する</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                ※GitHub Pages版のため、投稿はあなたのブラウザにのみ保存されます。
+            </p>
+            <form id="promptForm">
+                <div class="form-group">
+                    <label for="title">タイトル</label>
+                    <input type="text" id="title" name="title" placeholder="例：学級通信の挨拶文作成" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="school_type">校種</label>
+                    <select id="school_type" name="school_type" required>
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="小学校">小学校</option>
+                        <option value="中学校">中学校</option>
+                        <option value="高校">高校</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">教科・カテゴリ</label>
+                    <input type="text" id="subject" name="subject" placeholder="例：国語、生徒指導、事務" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">プロンプト内容</label>
+                    <textarea id="content" name="content" rows="6" placeholder="AIに入力するプロンプトをここに書いてください..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">投稿する</button>
+            </form>
+        </section>
+
+        <section id="promptList" class="prompt-list">
+            <!-- Prompts will be loaded here via JavaScript -->
+            <div class="card" id="loadingMessage" style="text-align: center; color: var(--text-muted);">
+                読み込み中...
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
